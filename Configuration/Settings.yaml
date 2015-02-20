@@ -1,0 +1,15 @@
+TYPO3:
+  Flow:
+    security:
+      enable: TRUE
+      authentication:
+        authenticationStrategy: oneToken
+        providers:
+          DefaultProvider:
+            provider: PersistedUsernamePasswordProvider
+
+Phallin:
+  BudgetManagement:
+    versions:
+      version1: 1.0
+      version2: 2.0

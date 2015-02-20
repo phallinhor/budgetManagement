@@ -1,0 +1,50 @@
+<f:layout name="Default" />
+
+<f:section name="Title">New item</f:section>
+
+<f:section name="Content">
+	<h3>Create a new item</h3>
+	<f:form action="create" objectName="newItem" class="form-horizontal">
+		<div class="form-group">
+			<label for="title" class="col-sm-2 control-label">Title:</label>
+			<div class="col-sm-10">
+				<f:form.textfield property="title" id="title" class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="description" class="col-sm-2 control-label">Description:</label>
+			<div class="col-sm-10">
+				<f:form.textarea property="description" id="description" class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="category" class="col-sm-2 control-label">Category:</label>
+			<div class="col-sm-10">
+				<f:form.select property="category" id="category" options="{categories}" optionLabelField="name" class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="quantity" class="col-sm-2 control-label">Quantity:</label>
+			<div class="col-sm-10">
+				<f:form.textfield property="quantity" id="quantity" class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="price" class="col-sm-2 control-label">Price:</label>
+			<div class="col-sm-10">
+				<f:form.textfield property="price" id="price" class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="date" class="col-sm-2 control-label">Date:</label>
+			<div class="col-sm-10">
+				<f:form.textfield property="buyDate" id="date" class="form-control"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<f:form.submit value="Create" class="btn btn-default"/>
+			</div>
+		</div>
+	</f:form>
+</f:section>

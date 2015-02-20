@@ -1,0 +1,26 @@
+-
+  name: 'Category routes'
+  uriPattern: 'category/{@action}'
+  defaults:
+    @package: 'Phallin.BudgetManagement'
+    @controller: Category
+    @format: 'html'
+
+
+-
+  name: 'Action route'
+  uriPattern: '{@action}'
+  defaults:
+    @package: 'Phallin.BudgetManagement'
+    @controller: 'Login'
+    @format: 'html'
+
+
+-
+  name: 'Phallin.BudgetManagement'
+  uriPattern: ''
+  defaults:
+    @package: 'Phallin.BudgetManagement'
+    @controller: 'Login'
+    @format: 'html'
+    @action: 'index'
