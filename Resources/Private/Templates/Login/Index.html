@@ -1,42 +1,34 @@
-<f:layout name="Default.html" />
+<f:layout name="Login.html" />
 
 <f:section name="Title">Login</f:section>
 
 <f:section name="Content">
-	<h1 class="center">Flow - Login</h1>
-	<f:flashMessages />
-
-	<f:security.ifHasRole role="Visitor">
-		<f:then>
-			<f:link.action action="logout" controller="Login">Logout</f:link.action>
-		</f:then>
-		<f:else>
-			<f:form action="authenticate" method="post" name="loginform" class="form-horizontal">
-				<div class="form-group">
-					<label for="user" class="col-sm-2 control-label">User</label>
-					<div class="col-sm-10">
-						<f:form.textfield class="form-control" id="user" name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" />
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="password" class="col-sm-2 control-label">Password</label>
-					<div class="col-sm-10">
-						<f:form.password class="form-control" id="password" name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" />
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<f:form.submit value="Login" class="btn btn-default"/>
-					</div>
-				</div>
-			</f:form>
-
+	<div class="login">
+		<f:flashMessages class="flashmessages" />
+		<h1 class="center">Login</h1>
+		<f:form action="authenticate" method="post" name="loginform" class="form-horizontal" >
 			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<label>Not yet an account?</label>
-					<f:link.action action="register" controller="Login">Register here!!</f:link.action>
+				<label for="user" class="col-sm-2 control-label">User</label>
+				<div class="col-sm-10">
+					<f:form.textfield class="form-control" id="user" name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" />
 				</div>
 			</div>
-		</f:else>
-	</f:security.ifHasRole>
+			<div class="form-group">
+				<label for="password" class="col-sm-2 control-label">Password</label>
+				<div class="col-sm-10">
+					<f:form.password class="form-control" id="password" name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<f:form.submit value="Login" class="btn btn-primary"/>
+				</div>
+			</div>
+		</f:form>
+
+		<div class="no-account">
+			<label>Not yet has an account?</label>
+			<f:link.action action="register" controller="Login">Register here!</f:link.action>
+		</div>
+	</div>
 </f:section>

@@ -30,6 +30,21 @@ class ItemController extends ActionController {
 	protected $categoryRepository;
 
 	/**
+	 * @var \TYPO3\Flow\Security\Context
+	 */
+	protected $securityContext;
+
+	/**
+	 * Injects the security context
+	 *
+	 * @param \TYPO3\Flow\Security\Context $securityContext The security context
+	 * @return void
+	 */
+	public function injectSecurityContext(\TYPO3\Flow\Security\Context $securityContext) {
+		$this->securityContext = $securityContext;
+	}
+
+	/**
 	 * @param array $settings
 	 */
 	public function injectSettings(array $settings) {
@@ -37,11 +52,11 @@ class ItemController extends ActionController {
 	}
 
 	/**
+	 * @param
 	 * @return void
 	 */
 	public function indexAction() {
-		\TYPO3\Flow\var_dump($this->settings);
-		//\TYPO3\FLOW3\var_dump($this->settings);
+		$this->view->assign('account', $this->securityContext->getAccount());
 		$this->view->assign('items', $this->itemRepository->findAll());
 	}
 
@@ -61,19 +76,10 @@ class ItemController extends ActionController {
 	}
 
 	/**
-	 * initials create action
-	 */
-	public function initializeCreateAction(Item $newItem) {
-		\TYPO3\Flow\var_dump($newItem);
-	}
-
-	/**
 	 * @param \Phallin\BudgetManagement\Domain\Model\Item $newItem
 	 * @return void
 	 */
 	public function createAction(Item $newItem) {
-		//\typo3\flow\var_dump()
-		\TYPO3\Flow\var_dump($newItem);
 		$this->itemRepository->add($newItem);
 		$this->addFlashMessage('Created a new item.');
 		$this->redirect('index');

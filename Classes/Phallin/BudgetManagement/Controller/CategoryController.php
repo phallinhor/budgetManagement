@@ -22,6 +22,7 @@ class CategoryController extends ActionController {
 	 * @return void
 	 */
 	public function indexAction() {
+		$items = $this->categoryRepository->findAll();
 		$this->view->assign('categories', $this->categoryRepository->findAll());
 	}
 

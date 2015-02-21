@@ -1,4 +1,16 @@
 -
+  name: 'Item routes'
+  uriPattern: 'item/{@action}'
+  defaults:
+    @package: 'Phallin.BudgetManagement'
+    @controller: Item
+    @format: 'html'
+
+
+##
+# Category route
+##
+-
   name: 'Category routes'
   uriPattern: 'category/{@action}'
   defaults:
@@ -7,6 +19,9 @@
     @format: 'html'
 
 
+##
+# Default route
+##
 -
   name: 'Action route'
   uriPattern: '{@action}'

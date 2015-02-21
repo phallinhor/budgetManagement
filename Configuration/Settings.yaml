@@ -7,6 +7,9 @@ TYPO3:
         providers:
           DefaultProvider:
             provider: PersistedUsernamePasswordProvider
+            entryPoint: 'WebRedirect'
+            entryPointOptions:
+              uri: ''
 
 Phallin:
   BudgetManagement:

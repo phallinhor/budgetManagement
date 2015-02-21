@@ -1,2 +1,13 @@
+resources:
+  methods:
+    item: 'method(Phallin\BudgetManagement\Controller\ItemController->.*Action())'
+    category: 'method(Phallin\BudgetManagement\Controller\CategoryController->.*Action())'
+
 roles:
   Visitor: []
+
+acls:
+  Visitor:
+    methods:
+      item: GRANT
+      category: GRANT

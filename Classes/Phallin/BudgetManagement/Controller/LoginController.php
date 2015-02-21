@@ -48,7 +48,9 @@ class LoginController extends ActionController {
 	 */
 	public function indexAction() {
 		$account = $this->securityContext->getAccount();
-		//\TYPO3\Flow\var_dump($account);
+		if ($account) {
+			$this->redirect('index', 'Item');
+		}
 	}
 
 	/**
@@ -71,7 +73,7 @@ class LoginController extends ActionController {
 	 * @return void
 	 */
 	public function registerAction() {
-		// do nothing more than display the register form
+
 	}
 
 	/**
